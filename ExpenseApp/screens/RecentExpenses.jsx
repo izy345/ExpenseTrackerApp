@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import ExpenseActions from '../store/expenses-actions';
 import { useState } from 'react';
 import LoadingOverlay from '../UI/LoadingOverlay';
+// import { useFocusEffect } from '@react-navigation/native';
 
 export default function RecentExpenses() {
 
@@ -25,10 +26,12 @@ export default function RecentExpenses() {
         getExpenses()
     },[])
 
+
     const recentExpenses = expenses.filter(expense => {
         const today = new Date();
+        const dateObj = new Date  (expense.date)
         const date7DaysAgo = getDateMinusDays(today, 7);
-        return expense.date >= date7DaysAgo;
+        return dateObj >= date7DaysAgo;
     }
     );
 
