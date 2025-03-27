@@ -1,0 +1,23 @@
+- - - Common commands - - -
+
+    Python3.12 -m venv env
+    source env/bin/activate
+    pip install djangorestframework
+    django-admin startproject <main_name>
+
+    Python manage.py startapp <name>
+    cd <name>
+
+
+    -- starting up the django app:
+    python manage.py runserver
+    python manage.py runserver 127.0.0.1:5000
+    python manage.py runserver 0.0.0.0:5000
+
+    -- superuser:
+    python manage.py createsuperuser
+
+
+    -- migrations
+    python manage.py makemigrations
+    python manage.py migrate
